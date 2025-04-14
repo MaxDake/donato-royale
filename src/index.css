@@ -1,0 +1,59 @@
+@import 'animate.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sparkling title animation */
+@keyframes sparkle {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.6) drop-shadow(0 0 8px #00ffe0); }
+  100% { filter: brightness(1); }
+}
+
+.glow-title {
+  animation: sparkle 2.5s ease-in-out infinite;
+}
+
+/* Floating crown or icon */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Confetti background for celebration */
+@keyframes confetti-fade {
+  0% { opacity: 0; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.05); }
+}
+
+.confetti {
+  animation: confetti-fade 3s ease-in-out forwards;
+}
+
+/* Share Button Hover + Pulse */
+.share-button {
+  @apply bg-blue-500 text-white font-semibold px-4 py-2 rounded-full shadow-md transition duration-300;
+}
+
+.share-button:hover {
+  @apply bg-blue-600 scale-105;
+  animation: pulse 1.5s infinite;
+}
+
+/* Pulse effect */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.75;
+  }
+}
+
